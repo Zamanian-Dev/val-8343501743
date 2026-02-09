@@ -2,22 +2,19 @@ import "./style.css";
 
 document.querySelector("#app").innerHTML = `
   <main class="card">
-    <p class="tag">Till varldens mest underbara kvinna</p>
-    <h1>Vill du vara min Valentine?</h1>
-    <p class="sub">Det finns ett sjalvklart val och en knapp som har lite prestationsangest.</p>
+    <p class="tag">Till världens mest underbara tjej</p>
+    <h1>Vill du bli min Valentine?</h1>
 
     <div class="button-row">
       <button id="yesBtn" autofocus>Ja, absolut</button>
       <button id="noBtn" tabindex="-1">Nej</button>
     </div>
 
-    <p class="hint" id="hint">Tips: den stora roda knappen gor alla glada.</p>
   </main>
 
   <section class="celebration hidden" id="celebration" aria-live="polite">
     <div class="celebration-card">
-      <h2>Basta. Beslutet. Nagonsin.</h2>
-      <p>Du fick precis mitt hjarta att gora en lyckodans.</p>
+      <h2>Yay! 🥰😍</h2>
       <p class="hearts">&lt;3 &lt;3 &lt;3</p>
     </div>
   </section>
@@ -38,7 +35,7 @@ const noTexts = [
   "Nix",
   "Missade",
   "Nastan",
-  "Fel knapp"
+  "Fel knapp",
 ];
 
 let accepted = false;
@@ -75,7 +72,7 @@ function moveNoButton() {
     left: 8,
     top: 8,
     right: window.innerWidth - noBtn.offsetWidth - 8,
-    bottom: window.innerHeight - noBtn.offsetHeight - 8
+    bottom: window.innerHeight - noBtn.offsetHeight - 8,
   };
 
   let nextX = random(limit.left, Math.max(limit.left + 1, limit.right));
@@ -91,7 +88,8 @@ function moveNoButton() {
   noBtn.style.left = `${nextX}px`;
   noBtn.style.top = `${nextY}px`;
   noBtn.textContent = noTexts[Math.floor(Math.random() * noTexts.length)];
-  hint.textContent = "Den har knappen ar inte tillganglig for slutgiltiga svar.";
+  hint.textContent =
+    "Den har knappen ar inte tillganglig for slutgiltiga svar.";
 
   setTimeout(() => {
     moving = false;
@@ -133,7 +131,7 @@ noBtn.addEventListener(
     event.preventDefault();
     moveNoButton();
   },
-  { passive: false }
+  { passive: false },
 );
 noBtn.addEventListener("click", (event) => {
   event.preventDefault();
