@@ -1,7 +1,7 @@
 (function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))l(n);new MutationObserver(n=>{for(const o of n)if(o.type==="childList")for(const d of o.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&l(d)}).observe(document,{childList:!0,subtree:!0});function s(n){const o={};return n.integrity&&(o.integrity=n.integrity),n.referrerPolicy&&(o.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?o.credentials="include":n.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function l(n){if(n.ep)return;n.ep=!0;const o=s(n);fetch(n.href,o)}})();document.querySelector("#app").innerHTML=`
   <main class="card">
     <p class="tag">Till världens mest underbara tjej</p>
-    <h1>Vill du bli min Valentine?</h1>
+    <h1>Vill du bli min Valentine? 🥰</h1>
 
     <div class="button-row">
       <button id="yesBtn" autofocus>Ja, absolut</button>
